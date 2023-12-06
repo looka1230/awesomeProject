@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="./css/FitnessDetail.css">
+    <script src="./css/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        @font-face {
+            font-family: "jua";
+            src: url("./fonts/BMJUA_ttf.ttf");
+        }
+
+        * {
+            font-family: "jua", Arial, serif, sans-serif, monospace;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0px 4px;
+        }
+
+        nav {
+            height: 115px;
+            width: 100%;
+            padding-top: 8px;
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        #logo {
+            position: relative;
+            top: 15px;
+        }
+
+        #searchBox {
+            text-align: center;
+            height: 0;
+        }
+
+        #searchBox input {
+            font-size: 23px;
+            position: relative;
+            bottom: 74px;
+            right: -20px;
+            border: 2px solid grey;
+            border-radius: 20px;
+            height: 36px;
+            width: 222px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+
+        #search_submit {
+            height: 22px;
+            position: relative;
+            right: -21px;
+            bottom: 59px;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 7px;
+            background-color: black;
+        }
+
+        .menu {
+            position: relative;
+            float: right;
+            padding-left: 20px;
+            bottom: 28px;
+            margin-right: 10px;
+            font-size: 22px;
+
+        }
+
+        hr {
+            position: relative;
+            top: -18px;
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        #memberBox {
+            height: 0px;
+            position: relative;
+            bottom: -62px;
+            right: 0px;
+        }
+
+        .member {
+            padding-left: 5px;
+            margin-right: 10px;
+            position: relative;
+            bottom: 180px;
+            float: right;
+        }
+        .wrapper {
+          position: absolute;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+
+      </style>
+    </head>
+
+    <body>
+      <header>
+        <nav>
+          <a href="#"><img src="./images/Logo.jpg" alt="로고" width="200px" height="100px" id="logo"></a>
+
+          <form action="" id="searchBox">
+            <!-- nav bar 검색창 필요하면 주석풀어서 사용 -->
+            <!-- <div>
+                        <input type="text">
+                        <a href="#"><img src="images/search.png" alt="" id="search_submit"></a>
+                    </div> -->
+          </form>
+
+          <span class="menu"><a href="#">블로그</a></span>
+          <span class="menu"><a href="#">커뮤니티</a></span>
+          <span class="menu"><a href="#">검색</a></span>
+          <hr>
+          <div id="memberBox">
+            <span class="member"><a href="#">로그인</a></span>
+            <span class="member"><a href="#">회원가입</a></span>
+          </div>
+        </nav>
+
+      </header>
+
+      <!--드롭다운 검색창-->
+      <div class="wrapper">
+        <div class="input-group mb-3 container d-flex align-self-center mt-3 clear:both; " style="width:700px; ">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">통합검색</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">통합검색</a></li>
+            <li><a class="dropdown-item" href="#">헬스장검색</a></li>
+            <li><a class="dropdown-item" href="#">트레이너검색</a></li>
+          </ul>
+          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+
+
+          <table class="table table-bordered  align-self-center" style="width:650px">
+            <thead>
+            </thead>
+            <tbody>
+
+              <!--선택된 체크 기구 종류 표시-->
+              <tr>
+                <th>
+                  <div class="list-group list-group-horizontal">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="false">
+                      헬스장 검색
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">트레이너 검색</a>
+                  </div>
+                </th>
+              </tr>
+
+              <tr>
+                <th scope="row">선택된 기구 종류 표시</th>
+              </tr>
+
+              <!--아코디언 체크박스-->
+              <th scope="row">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingZero">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseZero" aria-expanded="false" aria-controls="flush-collapseZero">
+                        운동부위
+                      </button>
+                    </h2>
+                    <div id="flush-collapseZero" class="accordion-collapse collapse" aria-labelledby="flush-headingZero" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">등</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">가슴</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">하체</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">어깨</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">팔</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">복근</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">랙</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">유산소</label>
+                        </div>
+                        </td>
+                        </tr>
+                      </div>
+                    </div>
+                  </div>
+              </th>
+
+              <td>
+                <div class="accordion accordion-flush" id="accordionFlushExample" style="width:660px;">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        기구종류
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">벤치프레스</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">해머벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">멀티벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">해머인클라인벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">인클라인벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">슈파인벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">해머디클라인벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">디클라인벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">인클라인프레스</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">체스트프레스</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">버터플라이</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">펙플라이</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox13" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">체스트웨이트</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox14" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">티바로우</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox15" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">백로망체어</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox16" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">치닝디핑</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox17" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">랫풀다운</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox18" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">토르소</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox19" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">시티드백</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox20" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">롱풀머신</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox21" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">디핑머신</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox22" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">시티드로우</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox23" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">치닝디핑머신</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox24" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">토탈힙</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox25" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">스텐딩카프</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox26" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">레그프레스</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox27" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">레그컬</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox28" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">레그익스텐션</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox29" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">파워레그프레스</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox30" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">이너&아웃사이</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox31" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">암컬머신</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox32" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">암컬렉</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox33" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">숄더프레스</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox34" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">로잉머신</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox35" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">평벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox36" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">트위스트</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox37" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">스미스머신</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox38" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">케이블크로스오버</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox39" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">크런치벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox40" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">싯업벤치</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox41" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">업도미널</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox42" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">파워랙</label>
+                        </div>
+
+              </td>
+              </tr>
+        </div>
+
+        <tr>
+          <th scope="row">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    기구보유수
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="숫자입력" aria-label="Recipient's username" aria-describedby="button-addon2">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">입력</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </th>
+
+        </tr>
+        <tr>
+
+          <th scope="row">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    메이커
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">해머스트랭스</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">라이프피트니스</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">싸이벡스</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">스포플렉</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">MATRIX</label>
+                    </div>
+                    </td>
+        </tr>
+      </div>
+      </div>
+      </div>
+      </th>
+
+      <tr>
+        <th scope="row">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                  기구상태
+                </button>
+              </h2>
+              <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">상</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">중</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">하</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </th>
+      </tr>
+      <tr>
+        <th scope="row">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                  서비스
+                </button>
+              </h2>
+              <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">운동복</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">수건</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">라커룸</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">주차무료</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </th>
+      <tr>
+        <th scope="row">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                  위치
+                </button>
+              </h2>
+              <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">서울</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">경기</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">인천</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">부산</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">대구</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">대전</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">광주</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">울산</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">충북</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">충남</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">경북</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">경남</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">전남</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">전북</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">강원</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">제주</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </th>
+        <!--어떤건지 이해 안됨-->
+      <tr>
+        <th scope="row">기구옵션확인</th>
+      </tr>
+
+      </tbody>
+      </table>
+
+      <!--지도 불러오기 에이블짐 좌표-->
+      <a href="https://map.kakao.com/?urlX=479231&urlY=1115853&urlLevel=3&map_type=TYPE_MAP&map_hybrid=false" target="_blank"><img width="680" height="310"
+          src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=479231&MY=1115853&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo" style="border:1px solid #ccc"></a>
+      <div class="hide" style="overflow:hidden;padding:7px 11px;border:1px solid #dfdfdf;border-color:rgba(0,0,0,.1);border-radius:0 0 2px 2px;background-color:#f9f9f9;width:685px;"><strong style="float: left;"><img
+            src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png" width="72" height="16" alt="카카오맵"></strong>
+        <div style="float: right;position:relative"><a style="font-size:12px;text-decoration:none;float:left;height:15px;padding-top:1px;line-height:15px;color:#000" target="_blank"
+            href="https://map.kakao.com/?urlX=479231&urlY=1115853&urlLevel=3&map_type=TYPE_MAP&map_hybrid=false">지도 크게 보기</a></div>
+      </div>
+
+      <!--검색결과 표-->
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">정확도순</th>
+            <th scope="col">리뷰많은순</th>
+            <th scope="col">별점많은순</th>
+            <th scope="col">찜많은순</th>
+          </tr>
+        </thead>
+      </table>
+      <!--검색 결과 창-->
+      <div class="container d-flex align-item-center" style="width:650px">
+        <div class="row">
+          <div class="col">
+            <img src="images\ablegym.jpg" class="rounded" alt="..." style="width:180px; height:180px">
+          </div>
+          <div class="col-6">
+            <p class="para">영등포 최대규모 프리미엄시설 최상의 강사진
+
+              (주)에이블짐 영등포역점 입니다.
+
+              A - Achieve
+
+              B - Better
+
+              L - Life
+
+              E - Experience
+            </p>
+          </div>
+          <div class="col">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+              </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+              </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                <path
+                  d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z" />
+              </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+              </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+              </svg><br><br><br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
+                </path>
+              </svg>
+
+          </div>
+        </div>
+      </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    </body>
+
+    <!--footer-->
+
+    <footer class="py-1 my-1">
+      <ul class="nav d-flex  border-bottom pb-1 mb-1">
+
+      </ul>
+      <p class="text-center text-muted">©GymGGun 2021 Company, Inc</p>
+    </footer>
+
+</html>

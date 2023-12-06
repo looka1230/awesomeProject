@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="./css/FitnessDetail.css">
+    <script src="./css/jquery-3.6.0.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: "jua";
+            src: url("./fonts/BMJUA_ttf.ttf");
+        }
+
+        * {
+            font-family: "jua", Arial, serif, sans-serif, monospace;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0px 4px;
+        }
+
+        nav {
+            height: 115px;
+            width: 100%;
+            padding-top: 8px;
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        #logo {
+            position: relative;
+            top: 15px;
+        }
+
+        #searchBox {
+            text-align: center;
+            height: 0;
+        }
+
+        #searchBox input {
+            font-size: 23px;
+            position: relative;
+            bottom: 74px;
+            right: -20px;
+            border: 2px solid grey;
+            border-radius: 20px;
+            height: 36px;
+            width: 222px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+
+        #search_submit {
+            height: 22px;
+            position: relative;
+            right: -21px;
+            bottom: 59px;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 7px;
+            background-color: black;
+        }
+
+        .menu {
+            position: relative;
+            float: right;
+            padding-left: 20px;
+            bottom: 28px;
+            margin-right: 10px;
+            font-size: 22px;
+
+        }
+
+        hr {
+            position: relative;
+            top: -18px;
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        #memberBox {
+            height: 0px;
+            position: relative;
+            bottom: -62px;
+            right: 0px;
+        }
+
+        .member {
+            padding-left: 5px;
+            margin-right: 10px;
+            position: relative;
+            bottom: 180px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <a href="#" name="main"><img src="./images/Logo.jpg" alt="로고" width="200px" height="100px" id="logo"></a>
+
+            <form action="" id="searchBox">
+                <!-- nav bar 검색창 필요하면 주석풀어서 사용 -->
+                <!-- <div>
+                            <input type="text">
+                            <a href="#"><img src="images/search.png" alt="" id="search_submit"></a>
+                        </div> -->
+            </form>
+
+            <span class="menu"><a href="#">블로그</a></span>
+            <span class="menu"><a href="#">커뮤니티</a></span>
+            <span class="menu"><a href="#">검색</a></span>
+            <hr>
+            <div id="memberBox">
+                <span class="member"><a href="#">회원가입</a></span>
+                <span class="member"><a href="#">로그인</a></span>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <script type="text/javascript" src="./js/FitnessDetail.js"></script>
+</body>
+
+</html>

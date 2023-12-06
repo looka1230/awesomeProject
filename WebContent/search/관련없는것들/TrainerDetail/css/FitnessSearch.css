@@ -1,0 +1,70 @@
+#filterBar {
+    height: 60px;
+    position: relative;
+    border:1px solid black;
+    width:100%;
+}
+.filterText{
+    position: relative;
+    left:60px;
+    top:15px;
+}
+.filterDesc{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+.filter{
+    background:#151b32;
+    color:#fffaf2;
+    margin-left: 10px;
+    font-size: 18px;
+    border-radius: 80px;
+    padding: 10px 20px 10px 20px;
+}
+
+.filter2{
+    background:red;
+    color:black;
+    margin-left: 10px;
+    font-size: 18px;
+    border-radius: 80px;
+    padding: 5px 20px 5px 20px;
+    position: relative;
+    top:13px;
+
+}
+
+#filterBar span img{
+    border: 3px solid black;
+    position: relative;
+    bottom:21px;
+    left: 800px;
+}
+#checks{
+    position: relative;
+    left:50px;
+}
+#orderBy table{
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+    font-size: 25px;
+}
+#fitnessList img{
+    position: relative;
+    left:120px;
+    margin: 30px;
+}
+#fitnessList h2,#fitnessList p{
+    position: relative;
+    left:370px;
+    bottom:150px;
+}
+.normal {
+    border: 1px solid black;
+    font-size:27px;
+    width:150px;
+    position: relative;
+    margin: 0 0 0 50%;
+}

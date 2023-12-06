@@ -1,0 +1,27 @@
+진행하지 못한 부분
+1. 회원탈퇴 기능 미 완성
+2. 그 외에도 여러가지 기능 간략화
+3. memberUpdate 미 완성
+4. 커뮤니티 미 구현
+
+보완이 필요한 부분
+1. 이미지 여러 개 안 되는거
+
+주의사항
+1. 등록할 때 이미지 한 개만 넣어짐
+2. 검색기능 헬스장/트레이너 이름으로 검색 가능
+3. 등록할 때 소개글 1000자 이상 불가능
+
+4. 자바 11, 톰캣 9 버젼으로 작성함. 호환이 안 맞는 것 같으니 
+jsp와 서블릿, 여러개의 클래스 파일만 복사해서 만들어진 다이나믹 프로젝트 안 webcontent 폴더 안으로 옮길 것
+
+### 옮길 때 경로 
+/webcontent:	index.jsp, indexFrame.jsp
+/webcontent/search:	나머지 jsp
+나머지 클래스는 src  폴더 밑에 패키지 폴더 안
+ 
+
+DB에서 바꿔야 할 부분
+1. fitness_center 테이블
+--business_num not null 제약조건 삭제
+alter table fitness_center drop constraint SYS_C008657(제약조건명은 각 DB마다 다름, 찾아서 해당되는 이름으로 바꾼다);

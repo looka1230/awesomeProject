@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: "jua";
+            src: url("./fonts/BMJUA_ttf.ttf");
+        }
+
+        * {
+            font-family: "jua";
+        }
+
+        html,body{
+          height: 100%;
+          margin: 0px 4px;
+        }
+
+        nav{
+          position: fixed;
+          /* right: 7.5px; */
+          z-index: 8;
+          background-color: white;
+          height:115px;
+          width: 99%;
+          padding-top: 8px;
+          padding-right: 7.5px;
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        #logo {
+            position: relative;
+            top: 10px;
+            width: 250px;
+        }
+
+        #searchBox {
+            text-align: center;
+            height: 0;
+        }
+
+        #searchBox input {
+            font-size: 23px;
+            position: relative;
+            bottom: 74px;
+            right: -20px;
+            border: 2px solid grey;
+            border-radius: 20px;
+            height: 36px;
+            width: 222px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+
+        #search_submit {
+            height: 22px;
+            position: relative;
+            right: -21px;
+            bottom: 59px;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 7px;
+            background-color: black;
+        }
+
+        .menu {
+            position: relative;
+            right: 0.5px;
+            float: right;
+            padding-left: 20px;
+            bottom: 28px;
+            margin-right: 10px;
+            font-size: 22px;
+
+        }
+
+        hr {
+            position: relative;
+            top: -18px;
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        #memberBox {
+            height: 0px;
+            position: relative;
+            bottom: -62px;
+            right: 0.5px;
+            float: right;
+        }
+
+        .member {
+            padding-left: 5px;
+            margin-right: 10px;
+            position: relative;
+            bottom: 180px;
+        }
+
+        section img {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            left: 60px;
+        }
+
+        aside{
+          width: 190px;
+          position: fixed;
+          left: 8px;
+          top:123px;
+        }
+
+        dt {
+            margin: 10px;
+            position: relative;
+            left: 25px;
+            font-size:20px;
+        }
+
+        dl {
+            position: relative;
+            top:8px;
+            bottom: 70px;
+            width: 180px;
+            margin: 2px;
+        }
+
+        .selected{
+          color: red !important;
+          font-style: oblique;
+        }
+
+        .content{
+          position: absolute;
+          left: 195px;
+          top: 133px;
+          margin-right: 2px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#"><img src="./images/Logo.jpg" alt="로고" width="200px" height="100px" id="logo"></a>
+
+            <form action="" id="searchBox">
+                <!-- reset버튼 최근검색어, -->
+                <div>
+                    <!-- <input type="text">
+                    <a href="#"><img src="images/search.png" alt="" id="search_submit"></a> -->
+                </div>
+            </form>
+
+            <span class="menu"><a href="#">블로그</a></span>
+            <span class="menu"><a href="#">커뮤니티</a></span>
+            <span class="menu"><a href="#">검색</a></span>
+            <hr>
+            <div id="memberBox">
+                <span class="member"><a href="#" class="selected">아개짜증(닉네임)</a>님</span>
+                <span class="member"><a href="#">로그아웃</a></span>
+            </div>
+        </nav>
+
+    </header>
+    <aside>
+        <dl>
+            <a href="#"></a>
+            <dt><a href="#">헬스장정보관리</a></dt>
+            <dd><a href="#">one</a></dd>
+            <dd><a href="#">two</a></dd>
+            <dd><a href="#">three</a></dd>
+            <dd><a href="#">four</a></dd>
+            <dt><a href="mypage_myInfo.html">내 정보수정</a></dt>
+            <dt><a href="mypage_bookmark.html">즐겨찾기</a></dt>
+            <dd><a href="mypage_bookmark_fitness.html">헬스장</a></dd>
+            <dd><a href="mypage_bookmark_trainer.html">트레이너</a></dd>
+            <dd><a href="mypage_bookmark_post.html">게시글</a></dd>
+            <dt><a href="mypage_myPost.html" class="selected">작성게시물</a></dt>
+            <dt><a href="mypage_resign.html">회원 탈퇴</a></dt>
+        </dl>
+    </aside>
+
+<!-- 여기에 들어갈거 입력 ㄱㄱㄱㄱ -->
+    <div class="content">
+
+    </div>
+
+</body>
+</html>

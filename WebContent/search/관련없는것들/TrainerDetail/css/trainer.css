@@ -1,0 +1,354 @@
+/* 초기화설정 */
+ul{
+    list-style: none;
+    line-height: 1.4em;
+}
+h2:not[id=fitName]{
+    padding:10px;
+    
+}
+section {
+    width:900px;
+    margin: 0 auto;
+    /*background-color: brown;*/
+}
+/* 페이지 폭 설정 */
+section table{
+    width: 900px;
+}
+/* 이상한 설정 넣어버림 지우면 위치 설정 다시 해야 됨 */
+section img {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    left: 60px;
+}
+/* 프로필 사진 */
+#profile td img{
+    position: static;
+    right:250px;
+}
+/* 프로필 메인사진 */
+.profileMain {
+    position: relative;
+    width:500px;
+    height:330px;
+}
+/* 프로필 서브사진 */
+.profileSub {
+    width:125px;
+    height:85px;
+}
+/* 프로필 사진선택 버튼 */
+.arrow1{
+    width:90px;
+    height:80px;
+    cursor: pointer;
+}
+.arrow2{
+    width:90px;
+    height:80px;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+/* 컨텐츠 영역 구분선 표시 */
+
+.content p{
+    padding: 10px;
+    border:3px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px darksalmon;
+}
+#left_position{
+    float: left;
+}
+
+/* 제목 소개 라인 */
+#nameIntro{
+    padding-top:100px;
+}
+#nameIntro > td:nth-child(1){
+    width:150px;
+}
+#nameIntro > td:nth-child(2){
+    width:50px;
+}
+/* 찜하기 버튼 */
+.bookmark_image > img{
+    left:-5px;
+    position: relative;
+    top:10px;
+    height:60px;
+    cursor: pointer;
+}
+/* 찜하기 버튼 변경 */
+.bookmark_image > img:last-child{
+    display: none;
+}
+.bookmark_image:hover > img:first-child{
+    display: none;
+}
+.bookmark_image:hover > img:last-child{
+    display:block;
+}
+/* 찜하기 Text1 */
+.bookmark{
+    position: relative;
+    right: -2px;
+}
+
+/* 전속 요청 버튼 */
+.request_join{
+    background-color: midnightblue;
+    font-weight: 100px;
+    color:white;
+    width:80px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 30px;
+    cursor: pointer;
+}
+/* 평점 이미지*/
+#nameIntro > td:nth-child(4) > img{
+    left:150px;
+}
+/* 기본 정보 영역 */
+.infoContent{
+    position: relative;
+    height: 221px;
+    
+}
+/* 홈페이지, 네이버블로그, 인스타 아이콘 */
+.linkIcon{
+    width:50px;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 200px;
+    top:30px;
+}
+
+/* 기본 정보 2번째 단락 */
+.content_second{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -30px;
+}
+
+.content_second p{
+    height: 221px;
+}
+
+
+/*블라인드 */
+#blind div img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+    position: relative;
+    left: -15px;
+}
+#blind h2{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    width:300px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    left:-10px;
+}
+#button_click p button{
+    border-radius: 20px;
+    background-color: midnightblue ;
+    color:white;
+    width:80px;
+    height:30px;
+}
+
+
+/* 트레이너 정보 */
+#have_trainer{
+    height:200px;
+}
+#have_trainer a{
+    overflow: hidden;
+}
+/* 트레이너 이미지 정보 */
+#trainer_profile{
+    float:left;
+    width:200px;
+}
+#trainer_profile > img{
+    left:-40px;
+    width:200px;
+    height:250px;
+}
+/* 트레이너 경력/이력 정보 */
+#trainer_career{
+    float: left;
+    position: relative;
+    left:-40px;
+    width:250px;
+    height: 250px;
+    white-space: nowrap;
+    overflow-y: auto;
+    overflow-x: auto;
+    text-overflow: ellipsis;
+}
+#trainer_award{
+    float: left;
+    position: relative;
+    left:-40px;
+    width:410px;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: auto;
+    text-overflow: ellipsis;
+}
+/* 트레이너 이름 */
+#trainer_name{
+    clear:both;
+    margin: 10px;
+    padding-top:8px;
+}
+
+/* 리뷰 */
+#review{
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+/* 간격유지 */
+#review > .gradient{
+    margin-top: 50px;
+}
+#review_header{
+    
+    height:65px;
+    background-color:red;
+    overflow: hidden;
+    border-radius: 10px;
+}
+/* 평점 점수 */
+#review_header > #star_rating{
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    top:-30px;
+    float:left;
+}
+/* 평점 */
+#star_rating_image{
+    float:left;
+}
+/* 평점 이미지 */
+#star_rating_image > img{
+    left:-10px;
+    top:5px;
+}
+/* 작성된 리뷰 갯수 */
+#star_rating_image > span{
+    position: relative;
+    left:30px;
+    top:10px;
+}
+/* 리뷰 필터 버튼 */
+#review_filter{
+    border: 2px solid black;
+    padding:10px;
+    margin-top:10px;
+    width:100px;
+    text-align: center;
+    border-radius:10px;
+    float:right;
+}
+/* 리뷰 작성 버튼 */
+#review_writer{
+    position: relative;
+    float:right;
+    border: 2px solid black;
+    margin-left: 30px;
+    margin-top:10px;
+    padding: 10px;
+    border-radius:10px;
+    right:10px;
+    overflow: hidden;
+    width:140px;
+    text-align: center;
+    height:25px;
+    line-height: 25px;
+}
+/* 리뷰 작성 버튼 이미지 */
+#review_writer > img{
+    float:left;
+    left:10px;
+    top:-2px;
+}
+/* 리뷰 내용 부분 */
+#review_content{
+    clear:both;
+    overflow: hidden;
+    height:800px;
+}
+.reviews{
+    width:255px;
+    /* 입력문자 300높이로 제한 넘으면 짤린다. */
+    /* 데이터베이스 작업 때는 글자수 제한 필요 */
+    height: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 여기까지 */
+    float:left;
+    margin:15px;
+    
+    padding:10px 0 0 10px;
+    overflow: hidden;
+    background-color:yellowgreen;
+}
+/* 리뷰 평점 */
+.reviews > img{
+    float:right;
+    position: relative;
+    left:0px;
+    width:100px;
+}
+/* 더 보기 버튼 */
+.more_button{
+    border:3px solid black;
+    width:100px;
+    height:50px;
+    line-height: 12.5px;
+    margin: 0 auto;
+    border-radius:5px;
+    font-size:20px;
+    cursor: pointer;
+}
+
+.more_button > p{
+    text-align: center;
+}
+/* 맨 위로 버튼 */
+.up_button{
+    position: relative;
+    top:-75px;
+    right:-300px;
+}
+.gradient{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    width:180px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    left:-10px;
+}
+.gradient_second{
+    position: relative;
+    bottom:10px;
+    left:1px;
+}
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/jquery-3.6.0.min.js">
+    </script>
+
+    <!-- 프레임 적용 -->
+    <script type="text/javascript">
+    $(document).ready( function() {
+    					$("#frame").load("sideFrame_Login_resign.html");
+    								}
+    					);
+    </script>
+
+    <!-- 프레임 불러오기 -->
+    <div id="frame"></div>
+
+    <!-- 컨텐츠영역 설정 -->
+    <style media="screen">
+      .content{
+        position: absolute;
+
+        width: 80%;
+        height: 100%;
+        left: 20rem;
+        top: 10rem;
+        margin-right: 2px;
+      }
+
+      .info {
+        padding-left: 20%;
+        border: 0;
+      }
+
+      .info tr {
+
+      }
+      .info th {
+        color: #363636;
+        border-radius: 5px;
+        background-color: #e8e8e8;
+        height: 135px;
+        width: 180px;
+
+      }
+      .info td {
+        padding-left: 5%;
+        background-color: #f5f5f5;
+        width:  500px;
+      }
+
+
+
+    </style>
+
+  </head>
+  <body>
+    <!-- Content 안쪽에 모든 내용 입력! -->
+    <div class="content">
+
+
+    <table class="info">
+      <thead>
+
+      </thead>
+      <tbody>
+        <tr>
+          <th>비밀번호 재확인</th>
+          <td>
+            <input type="text" name="" value=""> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button type="submit" name="button">확인</button>
+
+        </tr>
+        <tr>
+          <th>탈퇴사유</th>
+          <td>
+            <select class="" name="">
+              <option value="1">필요한 내용이 없음</option>
+              <option value="2">불편한 사이트</option>
+              <option value="3">기타</option>
+            </select>
+            <textarea name="name" rows="4" cols="50"></textarea>
+            <br>
+            <button type="submit" name="button">입력</button>
+
+        </tr>
+        <tr>
+          <th>탈퇴</th>
+          <td>
+            정말 탈퇴하시겠습니까? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button type="submit" name="button">예</button>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button type="submit" name="button">아니오</button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+
+      </tfoot>
+    </table>
+
+    </div>
+
+
+
+
+
+  </body>
+
+</html>

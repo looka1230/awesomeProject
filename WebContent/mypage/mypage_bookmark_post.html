@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/jquery-3.6.0.min.js">
+    </script>
+
+    <!-- 프레임 적용 -->
+    <script type="text/javascript">
+    $(document).ready( function() {
+    					$("#frame").load("sideFrame_Login_bookmark_post.html");
+    								}
+    					);
+    </script>
+
+
+    <!-- 프레임 불러오기 -->
+    <div id="frame"></div>
+
+    <!-- 컨텐츠영역 설정 -->
+    <style media="screen">
+
+      .content{
+        position: absolute;
+
+        width: 80%;
+        height: 100%;
+        left: 20rem;
+        top: 10rem;
+        margin-right: 2px;
+      }
+      .card {
+        display: inline-block;
+        border: 1px solid;
+        border-radius: 3px 3px;
+      }
+
+      .card img {
+        width: 100%
+      }
+
+      .card-body {
+        padding-left: 2%;
+      }
+
+      .button {
+        text-align: center;
+      }
+
+
+      .card-title {
+        text-align: center;
+      }
+
+      .list {
+        width: 80%;
+      }
+       th,td {
+        border: black 1px solid;
+      }
+
+
+
+
+    </style>
+
+  </head>
+  <body>
+    <!-- Content 안쪽에 모든 내용 입력! -->
+    <div class="content">
+
+      <section class="like_post">
+        <h1>좋아요 한 게시글</h1>
+        <table class="list">
+          <thead>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>등록일시</th>
+            <th>조회수</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>안더켠의 헬스교실 part.1</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>안더켠의 헬스교실 part.2</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>안더켠의 헬스교실 part.3</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>안더켠의 헬스교실 part.4</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>안더켠의 헬스교실 part.5</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>안더켠의 헬스교실 part.6</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>안더켠의 헬스교실 part.7</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>안더켠의 헬스교실 part.8</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>안더켠의 헬스교실 part.9</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>안더켠의 헬스교실 part.10</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>안더켠의 헬스교실 part.11</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>안더켠의 헬스교실 part.12</td>
+              <td>더켜링</td>
+              <td>21/12/01</td>
+              <td>5k</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" style="text-align: center; border: 0px">
+                <a href="#"><</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">></a>
+              </td>
+            </tr>
+          </tfoot>      
+        </table>
+      </section>
+    </div>
+  </body>
+</html>
